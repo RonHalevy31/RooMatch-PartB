@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RooMatch - Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="search-page-body">
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="images/logo2.png" alt="RooMatch Logo">
+        </div>
+
+        <nav>
+            <a href="profile.html">Profile</a>
+            <a href="search.html" class="active">Search</a>
+            <button id="logoutBtn">Logout</button>
+        </nav>
+    </header>
+
+    <main class="search-main">
+
+        <!-- Search filters -->
+        <aside class="search-sidebar">
+            <h2>Filters</h2>
+
+            <div class="filter-group">
+                <label for="filterAgeMin">Age Range:</label>
+
+                <div class="age-inputs">
+                    <input
+                        type="number"
+                        id="filterAgeMin"
+                        placeholder="Min"
+                        min="18"
+                    >
+
+                    <span>-</span>
+
+                    <input
+                        type="number"
+                        id="filterAgeMax"
+                        placeholder="Max"
+                        max="100"
+                    >
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <label for="filterGender">Gender:</label>
+
+                <select id="filterGender">
+                    <option value="any">Any</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="filterSmoking">Smoking:</label>
+
+                <select id="filterSmoking">
+                    <option value="any">Any</option>
+                    <option value="non-smoker">Non-Smoker</option>
+                    <option value="smoker">Smoker</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="filterPets">Pets:</label>
+
+                <select id="filterPets">
+                    <option value="any">Any</option>
+                    <option value="no">No Pets</option>
+                    <option value="yes">Pet Friendly</option>
+                </select>
+            </div>
+
+            <button id="applyFiltersBtn" class="btn-primary" style="width: 100%;">
+                Apply Filters
+            </button>
+        </aside>
+
+        <!-- Search results -->
+        <section class="search-results-area">
+            <div class="results-header">
+                <h2>Potential Matches</h2>
+
+                <p id="noResultsMsg" style="display: none; color: red;">
+                    No matches found. Try adjusting your filters.
+                </p>
+            </div>
+
+            <div class="results-grid" id="resultsGrid">
+
+                <!-- Profile card -->
+                <div
+                    class="profile-card"
+                    data-age="24"
+                    data-gender="male"
+                    data-smoking="non-smoker"
+                    data-pets="no"
+                >
+                    <div class="card-avatar">
+                        <img
+                            src="images/jon.jpg"
+                            alt="John Doe profile picture"
+                            class="avatar-img"
+                        >
+                    </div>
+
+                    <div class="card-info">
+                        <h3>John Doe, 24</h3>
+                        <p class="match-percentage">85% Match</p>
+                        <p class="short-desc">"Quiet student, looking for a clean apartment."</p>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="btn-secondary contact-btn">
+                            Show Contact Info
+                        </button>
+
+                        <div class="contact-info hidden">
+                            <p>Phone: 054-1234567</p>
+                            <p>Email: john@example.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile card -->
+                <div
+                    class="profile-card"
+                    data-age="26"
+                    data-gender="female"
+                    data-smoking="non-smoker"
+                    data-pets="yes"
+                >
+                    <div class="card-avatar">
+                        <img
+                            src="images/jane.jpg"
+                            alt="Jane Smith profile picture"
+                            class="avatar-img"
+                        >
+                    </div>
+
+                    <div class="card-info">
+                        <h3>Jane Smith, 26</h3>
+                        <p class="match-percentage">92% Match</p>
+                        <p class="short-desc">"Working professional, I have a cute cat."</p>
+                    </div>
+
+                    <div class="card-actions">
+                        <button class="btn-secondary contact-btn">
+                            Show Contact Info
+                        </button>
+
+                        <div class="contact-info hidden">
+                            <p>Phone: 052-9876543</p>
+                            <p>Email: jane@example.com</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 RooMatch. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
